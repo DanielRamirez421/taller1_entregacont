@@ -1,0 +1,27 @@
+name: Primer workflow de GitHub Actions -- Daniel Ramirez
+
+on:
+  push:
+    branches:
+      - main 
+
+  pull_request:
+    branches:
+      - main 
+
+jobs:
+  imprimir_info:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v3 
+      - name: Imprimir Mensaje Personalizado
+        run: |
+          echo "Hola, soy Daniel Ramirez Castaño y este es mi primer workflow!"  
+          echo "La fecha y hora actual es: $(date)"  
+      - name: Configurar Python
+        uses: actions/setup-python@v3
+        with:
+          python-version: '3.12'
+      - name: Ejecutar script Python
+        run: mi_script.py
