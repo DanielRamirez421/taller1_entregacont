@@ -24,4 +24,4 @@ jobs:
         with:
           python-version: '3.12'
       - name: Ejecutar script Python
-        run: mi_script.py
+        run: python mi_script.py
